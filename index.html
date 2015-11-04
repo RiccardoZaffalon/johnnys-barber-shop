@@ -46,7 +46,7 @@
 	        <figure class="logo"></figure>
 	        <h2 class="subtitle">Gentlemen's Club</h2>
 	    </div>
-	    <a href="#services"><figure class="mouse-icon"></figure></a>
+	    <a id="mouse-icon" href="#services"><figure class="mouse-icon"></figure></a>
 	    </header>
     <section id="services" class="clearfix">
         <div class="left image"></div>
@@ -76,7 +76,40 @@
         </div>
     </section>
     <section id="contacts" class="clearfix">
-        <div class="left image"></div>
+        <div class="left image" id="map"></div>
+
+            <script type="text/javascript">
+
+            var map;
+            function initMap() {
+                var myLatLng = {lat: 40.719786, lng: -74.006816};
+
+                map = new google.maps.Map(document.getElementById('map'), {
+                center: myLatLng,
+                zoom: 14,
+                scrollwheel: false,
+                disableDefaultUI: true,
+                zoomControl: true,
+                zoomControlOptions: {
+                    position: google.maps.ControlPosition.TOP_RIGHT
+                },
+                streetViewControl: true,
+                streetViewControlOptions: {
+                    position: google.maps.ControlPosition.LEFT_TOP
+                },
+                styles: [{"featureType":"all","elementType":"labels.text.fill","stylers":[{"saturation":36},{"color":"#000000"},{"lightness":40}]},{"featureType":"all","elementType":"labels.text.stroke","stylers":[{"visibility":"on"},{"color":"#000000"},{"lightness":16}]},{"featureType":"all","elementType":"labels.icon","stylers":[{"visibility":"off"}]},{"featureType":"administrative","elementType":"geometry.fill","stylers":[{"color":"#000000"},{"lightness":20}]},{"featureType":"administrative","elementType":"geometry.stroke","stylers":[{"color":"#000000"},{"lightness":17},{"weight":1.2}]},{"featureType":"landscape","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":20}]},{"featureType":"poi","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":21}]},{"featureType":"road.highway","elementType":"geometry.fill","stylers":[{"color":"#000000"},{"lightness":17}]},{"featureType":"road.highway","elementType":"geometry.stroke","stylers":[{"color":"#000000"},{"lightness":29},{"weight":0.2}]},{"featureType":"road.arterial","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":18}]},{"featureType":"road.local","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":16}]},{"featureType":"transit","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":19}]},{"featureType":"water","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":17}]}]
+              });
+
+                 var marker = new google.maps.Marker({
+                position: myLatLng,
+                map: map,
+                icon: 'img/marker2.png',
+                title: "Johnny's Barber Shop"
+              });
+            }
+
+            </script>
+
         <div class="right content">
             <h3>Contacts</h3>
             <main>
@@ -106,7 +139,7 @@
             </main>
         </div>
     </section>
-    <footer class="clearfix">
+    <footer id="footer" class="clearfix">
         <div class="left">
             <p>Johnny's Barber Shop &copy; 2015</p>
             <p>Designed &amp; Hand-Coded By</p>
@@ -124,6 +157,10 @@
             </nav>
         </div>
     </footer>
+
+    <script async defer
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyChdRi5ux_c2vHEnzw5UkMy5lfpNFZOesw&callback=initMap">
+    </script>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="js/nav.js"></script>

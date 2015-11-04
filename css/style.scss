@@ -469,7 +469,7 @@ nav ul {
   left: 0;
   right: 0;
   bottom: 0;
-  z-index: 2;
+  z-index: 3;
   background-color: darken($main-color, 3%);
   opacity: 0.98;
   transform: translateY(-150%);
@@ -584,7 +584,8 @@ figure.logo {
 }
 
 .mouse-icon {
-  position: absolute;
+  position: fixed;
+  z-index: 2;
   left: 50%;
   bottom: 5%;
   transform: translateX(-50%);
@@ -592,6 +593,7 @@ figure.logo {
   background-image: url("../img/mouse.png");
   width: 22px;
   height: 63px;
+  transition: all 0.3s ease;
 }
 
 section {
@@ -633,7 +635,7 @@ section {
 
 #contacts {
   .image {    
-    background-image: url("../img/map.jpg");
+    //background-image: url("../img/map.jpg");
   }
 }
 
