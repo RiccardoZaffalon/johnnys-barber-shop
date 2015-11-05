@@ -538,6 +538,21 @@ header {
   position: relative;
 }
 
+span.pointer {
+  cursor: pointer;
+  position: relative;
+}
+span.pointer:after {
+  content: '';
+  left: 0;
+  bottom: -3px;
+  width: 100%;
+  height: 1px;
+  background-color: #c7b299;
+  position: absolute;
+  z-index: 2;
+}
+
 /* Layout */
 .header {
   position: absolute;
@@ -551,7 +566,7 @@ header {
 figure.logo {
   margin: 10px auto 50px;
   background-image: url("../img/scissors.png");
-  width: 119px;
+  width: 131px;
   height: 51px;
 }
 
@@ -756,12 +771,40 @@ i.text {
 }
 
 /* Responsive Media Queries*/
-@media (max-width: 850px) {
+@media screen and (max-width: 1400px) {
+  section .content {
+    padding: 3% 5%;
+  }
+}
+@media screen and (max-width: 1000px) {
   .image {
     display: none;
   }
 
   .content {
     width: 100%;
+  }
+}
+@media screen and (max-width: 600px) {
+  .full-nav nav ul li {
+    font-size: 2em;
+    line-height: 3em;
+  }
+  .full-nav nav ul li a {
+    opacity: 0.65;
+  }
+
+  form input {
+    display: block;
+    width: 100%;
+  }
+}
+@media screen and (max-height: 700px) {
+  .full-nav nav ul li {
+    font-size: 2em;
+    line-height: 3em;
+  }
+  .full-nav nav ul li a {
+    opacity: 0.65;
   }
 }
